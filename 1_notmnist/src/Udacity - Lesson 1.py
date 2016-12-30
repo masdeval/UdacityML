@@ -85,8 +85,8 @@ for folder in test_folders:
 
 
 test_datasets = dataset_names
-for name in test_datasets:
-    print(name)
+#for name in test_datasets:
+    #print(name)
 
 #  creating pickle for train
 dataset_names = []
@@ -106,7 +106,9 @@ for folder in train_folders:
         print('Unable to save data to', set_filename, ':', e)
 
 train_datasets = dataset_names
-for name in train_datasets:
-    print(name)
+#for name in train_datasets:
+ #   print(name)
     
 
+dataset_test_A = pickle.load(file(test_datasets[0]));
+print(dataset_test_A.shape)

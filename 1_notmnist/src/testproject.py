@@ -13,6 +13,14 @@ scores = np.array([[1, 2, 3, 6],
                    [2, 4, 5, 6],
                    [3, 8, 7, 6]])
 
+# a 3D array (two stacked 2D arrays)                   
+c = np.array( [ [ [0,  1,  2],[ 10, 12, 13] ],
+                [ [100,101,102],[110,112,113] ]
+                
+                ] )                   
+
+
+print(c[0])
 
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
