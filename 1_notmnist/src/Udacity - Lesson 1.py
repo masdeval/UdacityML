@@ -114,11 +114,12 @@ train_datasets = dataset_names
  #   print(name)
 
 
-# e o nome do arquivo de imagem da primeira imagem - A
+# eh o nome do arquivo de imagem da primeira imagem - A
 print(test_datasets[0]) 
 dataset_test_A = pickle.load(file(test_datasets[0])); # carrega as imagemns que haviam sida persistidas
 print(dataset_test_A.shape)
 print(dataset_test_A[0][0])
+
 
 def make_arrays(nb_rows, img_size):
   if nb_rows:
@@ -209,3 +210,20 @@ except Exception as e:
 
 statinfo = os.stat(pickle_file)
 print('Compressed pickle size:', statinfo.st_size)
+
+
+# Problem 2
+import random
+def showProcessedRandom(dataset,labels,n): # shows size of the sample
+    indices=random.sample(range(0,labels.shape[0]),n)
+    fig=plt.figure()
+    for i in range(n):
+        a=fig.add_subplot(1,n,i+1)
+        plt.imshow(dataset[indices[i],:,:])
+        a.set_title(chr(labels[indices[i]]+ord('A')))
+        a.axes.get_xaxis().set_visible(False)
+        a.axes.get_yaxis().set_visible(False)
+    plt.show()
+    
+showProcessedRandom(train_dataset, train_labels, 7)
+showProcessedRandom(test_dataset, test_labels, 7)
