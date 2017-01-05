@@ -113,13 +113,15 @@ train_datasets = dataset_names
 #for name in train_datasets:
  #   print(name)
 
-
+#Problem 2
 # eh o nome do arquivo de imagem da primeira imagem - A
 print(test_datasets[0]) 
 dataset_test_A = pickle.load(file(test_datasets[0])); # carrega as imagemns que haviam sida persistidas
 print(dataset_test_A.shape)
 print(dataset_test_A[0][0])
 
+plt.imshow(dataset_test_A[0,0:28,0:28])
+plt.show()
 
 def make_arrays(nb_rows, img_size):
   if nb_rows:
@@ -225,5 +227,5 @@ def showProcessedRandom(dataset,labels,n): # shows size of the sample
         a.axes.get_yaxis().set_visible(False)
     plt.show()
     
-showProcessedRandom(train_dataset, train_labels, 7)
-showProcessedRandom(test_dataset, test_labels, 7)
+#showProcessedRandom(train_dataset, train_labels, 7)
+#showProcessedRandom(test_dataset, test_labels, 7)
